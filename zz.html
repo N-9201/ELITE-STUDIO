@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صور ديسكورد</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #e64a19;
+        }
+
+        .images {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .images img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="playSound()">اضغط هنا للمقلب</button>
+    <button onclick="showImages()">عرض الصور</button>
+    
+    <div class="images" id="imageContainer">
+        <img src="image1.jpg" alt="صورة 1">
+        <img src="image2.jpg" alt="صورة 2">
+    </div>
+
+    <audio id="sound" src="sound.mp3"></audio>
+    
+    <script>
+        function playSound() {
+            var sound = document.getElementById('sound');
+            sound.play();
+        }
+
+        function showImages() {
+            playSound(); // تشغيل الصوت عند عرض الصور
+            var imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.display = 'block'; // عرض الصور
+        }
+    </script>
+</body>
+</html>
